@@ -61,6 +61,13 @@ async def main(hostlanguage):
         except Exception as e:
             logging.error(f"Request for {eachURL} failed. Reason: {str(e)}")
 
+async def combinations():
+    await asyncio.gather(
+        main("en-IN"),
+        main("fr-FR"),
+        main("de-DE")
+    )
+
 
 if __name__ == "__main__":
     logging.basicConfig(
@@ -70,4 +77,4 @@ if __name__ == "__main__":
         filemode="w"
     )
 
-    asyncio.run(main("en-IN"))
+    asyncio.run(combinations())
