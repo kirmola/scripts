@@ -1,0 +1,22 @@
+name: Run Autocomplete Script
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11  # Choose your Python version
+
+      - name: Run Autocomplete Script
+        run: |
+          python autocomplete.py
