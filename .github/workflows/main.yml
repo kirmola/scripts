@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: 3.11  # Choose your Python version
 
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
       - name: Run Autocomplete Script
         run: |
-          python autocomplete.py
+          poetry run python autocomplete.py
