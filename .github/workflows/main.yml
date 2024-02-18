@@ -22,4 +22,5 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
       - name: Run Autocomplete Script
         run: |
+          poetry install
           poetry run python autocomplete.py
